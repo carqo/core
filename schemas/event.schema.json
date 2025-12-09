@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://carqo.org/schemas/event.schema.json",
+  "title": "Event",
+  "type": "object",
+  "required": ["sequence", "type", "position", "moment"],
+  "properties": {
+    "sequence": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Order of this event within the flow. Lower numbers occur earlier."
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of this event.",
+      "enum": ["LOAD", "UNLOAD", "STOP"]
+    },
+    "position": {
+      "$ref": "position.schema.json",
+      "description": "The position of this event."
+    },
+    "moment": {
+      "$ref": "moment.schema.json",
+      "description": "The moment for this event."
+    }
+  },
+  "additionalProperties": true
+}

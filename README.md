@@ -5,13 +5,36 @@ Carqo is an open-source logistics data standard that brings clarity and simplici
 ## Structure
 
 ```mermaid
-graph TD
-    Position -->|contains| latitude
-    Position -->|contains| longitude
-    Position -->|may reference| Address
+classDiagram
 
-    Address -->|contains| addressLine1
-    Address -->|contains| postalCode
-    Address -->|contains| city
-    Address -->|contains| country
+    class Event {
+        sequence
+        Type
+        Position
+        Moment
+    }
+
+    class Position {
+        latitude
+        longitude
+        _name_
+        _Address_
+    }
+
+    class Address {
+        addressLine1
+        zip
+        city
+        _state_
+        country
+    }
+
+    class Moment {
+        start
+        _end_
+    }
+
+    Event --> Position : has a
+    Position --> Address : may have
+    Event --> Moment   : has a
 ```

@@ -1,4 +1,11 @@
 {
-  "latitude": 51.893867,
-  "longitude": 4.520616
+  "sequence": 1,
+  "type": "LOAD",
+  "position": {
+    "latitude": 52.400334,
+    "longitude": 6.61591
+  },
+  "moment": {
+    "start": "2026-05-28T07:00:00Z"
+  }
 }

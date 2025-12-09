@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://carqo.org/schemas/moment.schema.json",
+  "title": "Moment",
+  "type": "object",
+  "required": ["start"],
+  "properties": {
+    "start": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Start datetime of this moment in ISO 8601 format."
+    },
+    "end": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Optional end datetime of this moment in ISO 8601 format."
+    }
+  },
+  "additionalProperties": true
+}
