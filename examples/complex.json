@@ -1,0 +1,16 @@
+{
+  "latitude": 51.893867,
+  "longitude": 4.520616,
+  "name": "Stadion Feijenoord",
+  "address": {
+    "addressLine1": "Van Zandvlietplein 1",
+    "addressLine2": "Poort 2",
+    "postalCode": "3077 AA",
+    "state": "Zuid-Holland",
+    "city": "Rotterdam",
+    "country": "NL"
+  },
+  "metadata": {
+    "source": "CRM System X"
+  }
+}
