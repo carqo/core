@@ -3,8 +3,12 @@
   "$id": "https://carqo.org/schemas/shipment.schema.json",
   "title": "Shipment",
   "type": "object",
-  "required": ["events"],
+  "required": ["reference", "events", "cargo"],
   "properties": {
+    "reference": {
+      "type": "string",
+      "description": "Unique reference identifier for this shipment."
+    },
     "events": {
       "type": "array",
       "description": "A list of events for this shipment.",
@@ -12,6 +16,10 @@
         "$ref": "event.schema.json"
       },
       "minItems": 1
+    },
+    "cargo": {
+      "$ref": "cargo.schema.json",
+      "description": "The cargo for this shipment."
     }
   },
   "additionalProperties": true

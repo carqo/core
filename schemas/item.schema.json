@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://carqo.org/schemas/item.schema.json",
+  "title": "Item",
+  "type": "object",
+  "required": ["id", "amount", "unit", "weight"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of this item within a cargo."
+    },
+    "amount": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Quantity of this item (must be a whole number greater than or equal to 1)."
+    },
+    "unit": {
+      "type": "string",
+      "pattern": "^[A-Z]+$",
+      "description": "Unit of measurement for this item (must be uppercase, e.g., PALLET, BOX, KG)."
+    },
+    "weight": {
+      "$ref": "weight.schema.json",
+      "description": "Weight of this item, with value and unit."
+    },
+    "description": {
+      "type": "string",
+      "description": "Optional human-readable description of this item."
+    }
+  },
+  "additionalProperties": true
+}

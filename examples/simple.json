@@ -1,4 +1,5 @@
 {
+  "reference": "SHIPMENT-001",
   "events": [
     {
       "sequence": 1,
@@ -9,7 +10,34 @@
       },
       "moment": {
         "start": "2026-05-28T07:00:00Z"
-      }
+      },
+      "items": ["CARGO-001-IEM-001"]
+    },
+    {
+      "sequence": 2,
+      "type": "UNLOAD",
+      "position": {
+        "latitude": 51.893867,
+        "longitude": 4.520616
+      },
+      "moment": {
+        "start": "2026-05-28T17:00:00Z"
+      },
+      "items": ["CARGO-001-IEM-001"]
     }
-  ]
+  ],
+  "cargo": {
+    "id": "CARGO-001",
+    "items": [
+      {
+        "id": "CARGO-001-IEM-001",
+        "amount": 5,
+        "unit": "BOX",
+        "weight": {
+          "value": 250,
+          "unit": "KG"
+        }
+      }
+    ]
+  }
 }

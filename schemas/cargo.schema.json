@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://carqo.org/schemas/cargo.schema.json",
+  "title": "Cargo",
+  "type": "object",
+  "required": ["id", "items"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of this cargo unit."
+    },
+    "description": {
+      "type": "string",
+      "description": "Optional human-readable description of this cargo unit."
+    },
+    "items": {
+      "type": "array",
+      "description": "List of items contained in this cargo unit. Must contain at least one item.",
+      "items": { "$ref": "item.schema.json" },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": true
+}
