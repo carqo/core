@@ -24,7 +24,7 @@
           "timezone": "GMT+1 (CET)"
         }
       },
-      "items": ["CARGO-001-ITEM-001", "CARGO-001-ITEM-002"]
+      "items": ["ITEM-001", "ITEM-002"]
     },
     {
       "sequence": 2,
@@ -49,16 +49,15 @@
         "start": "2026-05-28T17:00:00Z",
         "end": "2026-05-28T18:00:00Z"
       },
-      "items": ["CARGO-001-ITEM-001", "CARGO-001-ITEM-002"],
+      "items": ["ITEM-001", "ITEM-002"],
       "note": "You have to call 15 minutes before arriving."
     }
   ],
   "cargo": {
-    "id": "CARGO-001",
     "description": "Medical supplies.",
     "items": [
       {
-        "id": "CARGO-001-ITEM-001",
+        "id": "ITEM-001",
         "amount": 5,
         "unit": "BOX",
         "weight": {
@@ -73,7 +72,7 @@
         }
       },
       {
-        "id": "CARGO-001-ITEM-002",
+        "id": "ITEM-002",
         "amount": 2,
         "unit": "PALLET",
         "weight": {

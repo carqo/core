@@ -1,4 +1,4 @@
-# 📦 Carqo
+# carqo/core
 
 Carqo is an open-source logistics data standard that brings clarity and simplicity to the global transport ecosystem. It defines a unified structure for shipments, parties, planning, and reporting, allowing carriers, shippers, platforms, and software vendors to speak the same language.
 
@@ -16,7 +16,6 @@ class Shipment {
 
 class Cargo {
     <<schema>>
-    string id <<required>>
     Item[] items <<required>>
     string description
 }
@@ -104,7 +103,7 @@ As simple as possible:
       "moment": {
         "start": "2026-05-28T07:00:00Z"
       },
-      "items": ["CARGO-001-ITEM-001"]
+      "id": "ITEM-001"
     },
     {
       "sequence": 2,
@@ -116,14 +115,13 @@ As simple as possible:
       "moment": {
         "start": "2026-05-28T17:00:00Z"
       },
-      "items": ["CARGO-001-ITEM-001"]
+      "items": ["ITEM-001"]
     }
   ],
   "cargo": {
-    "id": "CARGO-001",
     "items": [
       {
-        "id": "CARGO-001-ITEM-001",
+        "id": "ITEM-001",
         "amount": 5,
         "unit": "BOX",
         "weight": {
