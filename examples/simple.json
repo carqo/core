@@ -11,7 +11,7 @@
       "moment": {
         "start": "2026-05-28T07:00:00Z"
       },
-      "items": ["CARGO-001-IEM-001"]
+      "items": ["CARGO-001-ITEM-001"]
     },
     {
       "sequence": 2,
@@ -23,14 +23,14 @@
       "moment": {
         "start": "2026-05-28T17:00:00Z"
       },
-      "items": ["CARGO-001-IEM-001"]
+      "items": ["CARGO-001-ITEM-001"]
     }
   ],
   "cargo": {
     "id": "CARGO-001",
     "items": [
       {
-        "id": "CARGO-001-IEM-001",
+        "id": "CARGO-001-ITEM-001",
         "amount": 5,
         "unit": "BOX",
         "weight": {
