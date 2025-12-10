@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://carqo.org/schemas/message.schema.json",
+  "title": "Message",
+  "type": "object",
+  "required": ["shipments"],
+  "properties": {
+    "shipments": {
+      "type": "array",
+      "description": "List of shipments in this message. Must contain at least one item.",
+      "items": { "$ref": "shipment.schema.json" },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": true
+}

@@ -7,6 +7,11 @@ Carqo is an open-source logistics data standard that brings clarity and simplici
 ```mermaid
 classDiagram
 
+class Message {
+    <<schema>>
+    Shipment[] shipments <<required>>
+}
+
 class Shipment {
     <<schema>>
     string reference <<required>>
@@ -74,6 +79,7 @@ class Moment {
     string end
 }
 
+Message "1" --> "*" Shipment : contains
 Shipment "1" --> "*" Event : contains
 Shipment "1" --> Cargo : contains
 Cargo "1" --> "*" Item : contains
@@ -91,45 +97,49 @@ As simple as possible:
 
 ```json
 {
-  "reference": "SHIPMENT-001",
-  "events": [
+  "shipments": [
     {
-      "sequence": 1,
-      "type": "LOAD",
-      "position": {
-        "latitude": 52.400334,
-        "longitude": 6.61591
-      },
-      "moment": {
-        "start": "2026-05-28T07:00:00Z"
-      },
-      "id": "ITEM-001"
-    },
-    {
-      "sequence": 2,
-      "type": "UNLOAD",
-      "position": {
-        "latitude": 51.893867,
-        "longitude": 4.520616
-      },
-      "moment": {
-        "start": "2026-05-28T17:00:00Z"
-      },
-      "items": ["ITEM-001"]
-    }
-  ],
-  "cargo": {
-    "items": [
-      {
-        "id": "ITEM-001",
-        "amount": 5,
-        "unit": "BOX",
-        "weight": {
-          "value": 250,
-          "unit": "KG"
+      "reference": "SHIPMENT-001",
+      "events": [
+        {
+          "sequence": 1,
+          "type": "LOAD",
+          "position": {
+            "latitude": 52.400334,
+            "longitude": 6.61591
+          },
+          "moment": {
+            "start": "2026-05-28T07:00:00Z"
+          },
+          "items": ["ITEM-001"]
+        },
+        {
+          "sequence": 2,
+          "type": "UNLOAD",
+          "position": {
+            "latitude": 51.893867,
+            "longitude": 4.520616
+          },
+          "moment": {
+            "start": "2026-05-28T17:00:00Z"
+          },
+          "items": ["ITEM-001"]
         }
+      ],
+      "cargo": {
+        "items": [
+          {
+            "id": "ITEM-001",
+            "amount": 5,
+            "unit": "BOX",
+            "weight": {
+              "value": 250,
+              "unit": "KG"
+            }
+          }
+        ]
       }
-    ]
-  }
+    }
+  ]
 }
 ```

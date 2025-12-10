@@ -1,95 +1,99 @@
 {
-  "reference": "SHIPMENT-001",
-  "events": [
+  "shipments": [
     {
-      "sequence": 1,
-      "type": "LOAD",
-      "position": {
-        "latitude": 51.893867,
-        "longitude": 4.520616,
-        "name": "Ziekenhuis Almelo",
-        "address": {
-          "addressLine1": "Zilvermeeuw 1",
-          "addressLine2": "Ingang Oost",
-          "postalCode": "7609 PP",
-          "state": "Overijssel",
-          "city": "Almelo",
-          "country": "NL"
-        }
-      },
-      "moment": {
-        "start": "2026-05-28T07:00:00Z",
-        "end": "2026-05-28T08:00:00Z",
-        "metadata": {
-          "timezone": "GMT+1 (CET)"
-        }
-      },
-      "items": ["ITEM-001", "ITEM-002"]
-    },
-    {
-      "sequence": 2,
-      "type": "UNLOAD",
-      "position": {
-        "latitude": 51.893867,
-        "longitude": 4.520616,
-        "name": "Stadion Feijenoord",
-        "address": {
-          "addressLine1": "Van Zandvlietplein 1",
-          "addressLine2": "Poort 2",
-          "postalCode": "3077 AA",
-          "state": "Zuid-Holland",
-          "city": "Rotterdam",
-          "country": "NL"
+      "reference": "SHIPMENT-001",
+      "events": [
+        {
+          "sequence": 1,
+          "type": "LOAD",
+          "position": {
+            "latitude": 51.893867,
+            "longitude": 4.520616,
+            "name": "Ziekenhuis Almelo",
+            "address": {
+              "addressLine1": "Zilvermeeuw 1",
+              "addressLine2": "Ingang Oost",
+              "postalCode": "7609 PP",
+              "state": "Overijssel",
+              "city": "Almelo",
+              "country": "NL"
+            }
+          },
+          "moment": {
+            "start": "2026-05-28T07:00:00Z",
+            "end": "2026-05-28T08:00:00Z",
+            "metadata": {
+              "timezone": "GMT+1 (CET)"
+            }
+          },
+          "items": ["ITEM-001", "ITEM-002"]
         },
-        "metadata": {
-          "source": "CRM System X"
+        {
+          "sequence": 2,
+          "type": "UNLOAD",
+          "position": {
+            "latitude": 51.893867,
+            "longitude": 4.520616,
+            "name": "Stadion Feijenoord",
+            "address": {
+              "addressLine1": "Van Zandvlietplein 1",
+              "addressLine2": "Poort 2",
+              "postalCode": "3077 AA",
+              "state": "Zuid-Holland",
+              "city": "Rotterdam",
+              "country": "NL"
+            },
+            "metadata": {
+              "source": "CRM System X"
+            }
+          },
+          "moment": {
+            "start": "2026-05-28T17:00:00Z",
+            "end": "2026-05-28T18:00:00Z"
+          },
+          "items": ["ITEM-001", "ITEM-002"],
+          "note": "You have to call 15 minutes before arriving."
         }
-      },
-      "moment": {
-        "start": "2026-05-28T17:00:00Z",
-        "end": "2026-05-28T18:00:00Z"
-      },
-      "items": ["ITEM-001", "ITEM-002"],
-      "note": "You have to call 15 minutes before arriving."
-    }
-  ],
-  "cargo": {
-    "description": "Medical supplies.",
-    "items": [
-      {
-        "id": "ITEM-001",
-        "amount": 5,
-        "unit": "BOX",
-        "weight": {
-          "value": 250,
-          "unit": "KG"
-        },
-        "description": "Boxes containing medical masks.",
-        "sku": "MED-MASK-2026",
+      ],
+      "cargo": {
+        "description": "Medical supplies.",
+        "items": [
+          {
+            "id": "ITEM-001",
+            "amount": 5,
+            "unit": "BOX",
+            "weight": {
+              "value": 250,
+              "unit": "KG"
+            },
+            "description": "Boxes containing medical masks.",
+            "sku": "MED-MASK-2026",
+            "metadata": {
+              "manufacturer": "HealthCorp",
+              "expirationDate": "2028-12-31"
+            }
+          },
+          {
+            "id": "ITEM-002",
+            "amount": 2,
+            "unit": "PALLET",
+            "weight": {
+              "value": 1000,
+              "unit": "KG"
+            },
+            "description": "Pallets with ventilators.",
+            "sku": "VENT-XL-2026",
+            "metadata": {
+              "manufacturer": "MediTech",
+              "serialNumbers": ["MTX-VNT-0001", "MTX-VNT-0002"]
+            }
+          }
+        ],
         "metadata": {
-          "manufacturer": "HealthCorp",
-          "expirationDate": "2028-12-31"
-        }
-      },
-      {
-        "id": "ITEM-002",
-        "amount": 2,
-        "unit": "PALLET",
-        "weight": {
-          "value": 1000,
-          "unit": "KG"
-        },
-        "description": "Pallets with ventilators.",
-        "sku": "VENT-XL-2026",
-        "metadata": {
-          "manufacturer": "MediTech",
-          "serialNumbers": ["MTX-VNT-0001", "MTX-VNT-0002"]
+          "priority": "high",
+          "handlingInstructions": "Keep dry and handle with care."
         }
       }
-    ],
-    "metadata": {
-      "priority": "high",
-      "handlingInstructions": "Keep dry and handle with care."
     }
-  }
+  ]
 }
