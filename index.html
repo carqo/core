@@ -33,7 +33,7 @@
     <style>
       body {
         font-family: "Trebuchet MS", sans-serif;
-        margin: 2rem;
+        margin: 1.4rem;
         line-height: 1.4;
         color: #5d6c7b;
       }
@@ -41,6 +41,7 @@
       h1 {
         color: #1c2b33;
         margin-bottom: 0.5rem;
+        font-size: 2rem;
       }
 
       h2 {
@@ -59,11 +60,15 @@
       }
 
       ul {
-        margin-left: 1.2rem;
+        margin-left: 0.4rem;
       }
 
-      .schema-list ul {
-        margin-top: 0.4rem;
+      footer {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 3rem;
+        font-size: 0.9rem;
       }
     </style>
   </head>
@@ -78,6 +83,7 @@
       interoperable logistics schema.
     </p>
 
+    <h2>Join the movement</h2>
     <p>
       Access the Carqo core on
       <a
@@ -85,7 +91,18 @@
         target="_blank"
         rel="noopener noreferrer"
         >GitHub</a
-      >.
+      >
+      and follow us on
+      <a
+        href="https://www.linkedin.com/company/carqo"
+        rel="noopener noreferrer"
+        target="_blank"
+        >LinkedIn</a
+      >
+      to join a global community of developers, carriers, and logistics experts
+      contributing to the creation of a unified, open-source logistics standard
+      that simplifies data, improves interoperability, and drives the future of
+      the global transport ecosystem.
     </p>
 
     <h2>Examples</h2>
@@ -109,33 +126,33 @@
       <ul>
         <li>
           <a href="/schemas/shipment.schema.json" rel="noopener noreferrer"
-            >shipment.schema.json</a
+            >Shipment</a
           >
           <ul>
             <li>
               <a href="/schemas/event.schema.json" rel="noopener noreferrer"
-                >event.schema.json</a
+                >Event</a
               >
               <ul>
                 <li>
                   <a
                     href="/schemas/moment.schema.json"
                     rel="noopener noreferrer"
-                    >moment.schema.json</a
+                    >Moment</a
                   >
                 </li>
                 <li>
                   <a
                     href="/schemas/position.schema.json"
                     rel="noopener noreferrer"
-                    >position.schema.json</a
+                    >Position</a
                   >
                   <ul>
                     <li>
                       <a
                         href="/schemas/address.schema.json"
                         rel="noopener noreferrer"
-                        >address.schema.json</a
+                        >Address</a
                       >
                     </li>
                   </ul>
@@ -144,19 +161,19 @@
             </li>
             <li>
               <a href="/schemas/cargo.schema.json" rel="noopener noreferrer"
-                >cargo.schema.json</a
+                >Cargo</a
               >
               <ul>
                 <li>
                   <a href="/schemas/item.schema.json" rel="noopener noreferrer"
-                    >item.schema.json</a
+                    >Item</a
                   >
                   <ul>
                     <li>
                       <a
                         href="/schemas/weight.schema.json"
                         rel="noopener noreferrer"
-                        >weight.schema.json</a
+                        >Weight</a
                       >
                     </li>
                   </ul>
@@ -167,5 +184,13 @@
         </li>
       </ul>
     </div>
+    <footer>
+      <img
+        src="/assets/favicon-32.png"
+        alt="Carqo Logo"
+        width="16"
+        height="16"
+      /><span>The open standard for simple, structured logistics data. </span>
+    </footer>
   </body>
 </html>
