@@ -1,28 +1,53 @@
 {
-  "sequence": 2,
-  "type": "UNLOAD",
-  "position": {
-    "latitude": 51.893867,
-    "longitude": 4.520616,
-    "name": "Stadion Feijenoord",
-    "address": {
-      "addressLine1": "Van Zandvlietplein 1",
-      "addressLine2": "Poort 2",
-      "postalCode": "3077 AA",
-      "state": "Zuid-Holland",
-      "city": "Rotterdam",
-      "country": "NL"
+  "events": [
+    {
+      "sequence": 1,
+      "type": "LOAD",
+      "position": {
+        "latitude": 51.893867,
+        "longitude": 4.520616,
+        "name": "Ziekenhuis Almelo",
+        "address": {
+          "addressLine1": "Zilvermeeuw 1",
+          "addressLine2": "Ingang Oost",
+          "postalCode": "7609 PP",
+          "state": "Overijssel",
+          "city": "Almelo",
+          "country": "NL"
+        }
+      },
+      "moment": {
+        "start": "2026-05-28T07:00:00Z",
+        "end": "2026-05-28T08:00:00Z",
+        "metadata": {
+          "timezone": "GMT+1 (CET)"
+        }
+      }
     },
-    "metadata": {
-      "source": "CRM System X"
+    {
+      "sequence": 2,
+      "type": "UNLOAD",
+      "position": {
+        "latitude": 51.893867,
+        "longitude": 4.520616,
+        "name": "Stadion Feijenoord",
+        "address": {
+          "addressLine1": "Van Zandvlietplein 1",
+          "addressLine2": "Poort 2",
+          "postalCode": "3077 AA",
+          "state": "Zuid-Holland",
+          "city": "Rotterdam",
+          "country": "NL"
+        },
+        "metadata": {
+          "source": "CRM System X"
+        }
+      },
+      "moment": {
+        "start": "2026-05-28T17:00:00Z",
+        "end": "2026-05-28T18:00:00Z"
+      },
+      "note": "You have to call 15 minutes before arriving."
     }
-  },
-  "moment": {
-    "start": "2026-05-28T17:00:00Z",
-    "end": "2026-05-28T18:00:00Z",
-    "metadata": {
-      "timezone": "GMT+1 (CET)"
-    }
-  },
-  "note": "You have to call 15 minutes before arriving."
+  ]
 }

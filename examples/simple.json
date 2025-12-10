@@ -1,11 +1,15 @@
 {
-  "sequence": 1,
-  "type": "LOAD",
-  "position": {
-    "latitude": 52.400334,
-    "longitude": 6.61591
-  },
-  "moment": {
-    "start": "2026-05-28T07:00:00Z"
-  }
+  "events": [
+    {
+      "sequence": 1,
+      "type": "LOAD",
+      "position": {
+        "latitude": 52.400334,
+        "longitude": 6.61591
+      },
+      "moment": {
+        "start": "2026-05-28T07:00:00Z"
+      }
+    }
+  ]
 }

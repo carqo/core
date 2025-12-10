@@ -7,34 +7,44 @@ Carqo is an open-source logistics data standard that brings clarity and simplici
 ```mermaid
 classDiagram
 
-    class Event {
-        sequence
-        Type
-        Position
-        Moment
-    }
+class Shipment {
+    <<schema>>
+    Event[] events <<required>>
+}
 
-    class Position {
-        latitude
-        longitude
-        _name_
-        _Address_
-    }
+class Event {
+    <<schema>>
+    int sequence <<required>>
+    EventType type <<required>>
+    Position position <<required>>
+    Moment moment <<required>>
+}
 
-    class Address {
-        addressLine1
-        zip
-        city
-        _state_
-        country
-    }
+class Position {
+    <<schema>>
+    number latitude <<required>>
+    number longitude <<required>>
+    string name
+    Address address
+}
 
-    class Moment {
-        start
-        _end_
-    }
+class Address {
+    <<schema>>
+    string addressLine1 <<required>>
+    string zip <<required>>
+    string city <<required>>
+    string state
+    string country <<required>>
+}
 
-    Event --> Position : has a
-    Position --> Address : may have
-    Event --> Moment   : has a
+class Moment {
+    <<schema>>
+    string start <<required>>
+    string end
+}
+
+Shipment "1" --> "1..*" Event : contains
+Event --> Position : contains
+Position "0..1" --> Address : optional
+Event --> Moment : contains
 ```

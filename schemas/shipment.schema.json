@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://carqo.org/schemas/shipment.schema.json",
+  "title": "Shipment",
+  "type": "object",
+  "required": ["events"],
+  "properties": {
+    "events": {
+      "type": "array",
+      "description": "A list of events for this shipment.",
+      "items": {
+        "$ref": "event.schema.json"
+      },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": true
+}
