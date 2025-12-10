@@ -3,12 +3,8 @@
   "$id": "https://carqo.org/schemas/cargo.schema.json",
   "title": "Cargo",
   "type": "object",
-  "required": ["id", "items"],
+  "required": ["items"],
   "properties": {
-    "id": {
-      "type": "string",
-      "description": "Unique identifier of this cargo unit."
-    },
     "description": {
       "type": "string",
       "description": "Optional human-readable description of this cargo unit."
