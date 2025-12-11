@@ -3,7 +3,7 @@
   "$id": "https://carqo.org/schemas/actor.schema.json",
   "title": "Actor",
   "type": "object",
-  "required": ["role"],
+  "required": ["roles"],
   "properties": {
     "directoryId": {
       "type": "string",
@@ -13,12 +13,12 @@
       "$ref": "relation.schema.json",
       "description": "Detailed relation object for the actor"
     },
-    "role": {
+    "roles": {
       "type": "array",
-      "enum": ["PRINCIPAL", "SENDER", "RECEIVER", "CARRIER"],
       "description": "Roles of this actor",
       "items": {
-        "type": "string"
+        "type": "string",
+        "enum": ["PRINCIPAL", "SENDER", "RECEIVER", "CARRIER"]
       },
       "minItems": 1
     }
