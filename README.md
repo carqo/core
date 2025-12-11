@@ -2,7 +2,7 @@
 
 # The open standard for simple, structured logistics data
 
-Carqo is an open-source logistics data standard that brings clarity and simplicity to the global transport ecosystem. It defines a unified structure for shipments, parties, planning, and reporting, allowing carriers, shippers, platforms, and software vendors to speak the same language.
+Carqo is an open-source data standard for logistics that brings transparency and simplicity to the global transport ecosystem. The standard provides a uniform and accessible structure for shipments and all involved parties, enabling organizations to exchange information consistently and collaborate far more efficiently.
 
 ## Model
 

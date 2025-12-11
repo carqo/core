@@ -7,7 +7,7 @@
     <title>The open standard for simple, structured logistics data.</title>
     <meta
       name="description"
-      content="Carqo is an open-source open data standard for logistics. A unified logistics schema and transport data format for simple, structured, interoperable supply chain data."
+      content="Carqo is an open-source data standard for logistics that brings transparency and simplicity to the global transport ecosystem."
     />
     <meta property="og:url" content="https://carqo.org" />
     <meta property="og:type" content="website" />
@@ -17,193 +17,82 @@
     />
     <meta
       property="og:description"
-      content="Carqo is an open-source open data standard for logistics. A unified logistics schema and transport data format for simple, structured, interoperable supply chain data."
+      content="Carqo is an open-source data standard for logistics that brings transparency and simplicity to the global transport ecosystem."
     />
     <meta property="og:image" content="https://carqo.org/assets/banner.jpg" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
       body {
-        font-family: "Trebuchet MS", sans-serif;
-        margin: 1.4rem;
-        line-height: 1.4;
-        color: #5d6c7b;
-      }
-
-      h1 {
-        color: #1c2b33;
-        margin-bottom: 0.5rem;
-        font-size: 2rem;
-      }
-
-      h2 {
-        color: #1c2b33;
-        margin-bottom: 0.5rem;
-      }
-
-      a {
-        color: #0064e0;
-        font-weight: bold;
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      ul {
-        margin-left: 0.4rem;
-      }
-
-      footer {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        margin-top: 3rem;
-        font-size: 0.9rem;
+        font-family: "Inter", sans-serif;
+        color: #fff;
+        background-color: #0064e0;
       }
     </style>
   </head>
   <body>
-    <h1>The open standard for simple, structured logistics data</h1>
-
-    <p>
-      Carqo is an open-source logistics data standard that brings clarity and
-      simplicity to the global transport ecosystem. It defines a unified
-      structure for shipments, parties, planning, and reporting, enabling
-      carriers, shippers, platforms, and software vendors to work with a single
-      interoperable logistics schema.
-    </p>
-
-    <h2>Join the movement</h2>
-    <p>
-      Access the Carqo core on
-      <a
-        href="https://github.com/carqo/core"
-        target="_blank"
-        rel="noopener noreferrer"
-        >GitHub</a
-      >
-      and follow us on
-      <a
-        href="https://www.linkedin.com/company/carqo"
-        rel="noopener noreferrer"
-        target="_blank"
-        >LinkedIn</a
-      >
-      to join a global community of developers, carriers, and logistics experts
-      contributing to the creation of a unified, open-source logistics standard
-      that simplifies data, improves interoperability, and drives the future of
-      the global transport ecosystem.
-    </p>
-
-    <h2>Examples</h2>
-    <p>
-      Below are two examples of the JSON object: one as simple as possible, and
-      one more complex.
-    </p>
-
-    <ul>
-      <li>
-        <a href="/examples/simple.json" rel="noopener noreferrer">Simple</a>
-      </li>
-      <li>
-        <a href="/examples/complex.json" rel="noopener noreferrer">Complex</a>
-      </li>
-    </ul>
-
-    <h2>Schemas</h2>
-    <p>Here is a list of all available JSON schemas for reference and use.</p>
-    <div class="schema-list">
-      <ul>
-        <li>
-          <a href="/schemas/message.schema.json" rel="noopener noreferrer"
-            >Message</a
+    <div
+      class="flex flex-col mx-auto max-w-7xl p-4 sm:p-6 gap-y-16 sm:gap-y-32 min-h-screen"
+    >
+      <div class="flex items-center justify-between">
+        <a href="/index.html"
+          ><img src="/assets/logo_white.png" alt="Carqo" class="w-24"
+        /></a>
+        <div class="flex space-x-4">
+          <a
+            href="https://github.com/carqo"
+            target="_blank"
+            class="opacity-50 hover:opacity-100 transition"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0,0,256,256"
+            >
+              <g fill="#ffffff">
+                <g transform="scale(8.53333,8.53333)">
+                  <path
+                    d="M15,3c-6.627,0 -12,5.373 -12,12c0,5.623 3.872,10.328 9.092,11.63c-0.056,-0.162 -0.092,-0.35 -0.092,-0.583v-2.051c-0.487,0 -1.303,0 -1.508,0c-0.821,0 -1.551,-0.353 -1.905,-1.009c-0.393,-0.729 -0.461,-1.844 -1.435,-2.526c-0.289,-0.227 -0.069,-0.486 0.264,-0.451c0.615,0.174 1.125,0.596 1.605,1.222c0.478,0.627 0.703,0.769 1.596,0.769c0.433,0 1.081,-0.025 1.691,-0.121c0.328,-0.833 0.895,-1.6 1.588,-1.962c-3.996,-0.411 -5.903,-2.399 -5.903,-5.098c0,-1.162 0.495,-2.286 1.336,-3.233c-0.276,-0.94 -0.623,-2.857 0.106,-3.587c1.798,0 2.885,1.166 3.146,1.481c0.896,-0.307 1.88,-0.481 2.914,-0.481c1.036,0 2.024,0.174 2.922,0.483c0.258,-0.313 1.346,-1.483 3.148,-1.483c0.732,0.731 0.381,2.656 0.102,3.594c0.836,0.945 1.328,2.066 1.328,3.226c0,2.697 -1.904,4.684 -5.894,5.097c1.098,0.573 1.899,2.183 1.899,3.396v2.734c0,0.104 -0.023,0.179 -0.035,0.268c4.676,-1.639 8.035,-6.079 8.035,-11.315c0,-6.627 -5.373,-12 -12,-12z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/company/carqo"
+            target="_blank"
+            class="opacity-50 hover:opacity-100 transition"
           >
-        </li>
-        <ul>
-          <li>
-            <a href="/schemas/actor.schema.json" rel="noopener noreferrer"
-              >Actor</a
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0,0,256,256"
             >
-          </li>
-          <ul>
-            <li>
-              <a href="/schemas/relation.schema.json" rel="noopener noreferrer"
-                >Relation</a
-              >
-            </li>
-            <ul>
-              <li>
-                <a href="/schemas/address.schema.json" rel="noopener noreferrer"
-                  >Address</a
-                >
-              </li>
-            </ul>
-          </ul>
-          <li>
-            <a href="/schemas/shipment.schema.json" rel="noopener noreferrer"
-              >Shipment</a
-            >
-          </li>
-          <ul>
-            <li>
-              <a href="/schemas/event.schema.json" rel="noopener noreferrer"
-                >Event</a
-              >
-              <ul>
-                <li>
-                  <a
-                    href="/schemas/moment.schema.json"
-                    rel="noopener noreferrer"
-                    >Moment</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/schemas/position.schema.json"
-                    rel="noopener noreferrer"
-                    >Position</a
-                  >
-                  <ul>
-                    <li>
-                      <a
-                        href="/schemas/address.schema.json"
-                        rel="noopener noreferrer"
-                        >Address</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="/schemas/cargo.schema.json" rel="noopener noreferrer"
-                >Cargo</a
-              >
-              <ul>
-                <li>
-                  <a href="/schemas/item.schema.json" rel="noopener noreferrer"
-                    >Item</a
-                  >
-                  <ul>
-                    <li>
-                      <a
-                        href="/schemas/weight.schema.json"
-                        rel="noopener noreferrer"
-                        >Weight</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </ul>
-      </ul>
+              <g fill="#ffffff">
+                <g transform="scale(8.53333,8.53333)">
+                  <path
+                    d="M24,4h-18c-1.105,0 -2,0.895 -2,2v18c0,1.105 0.895,2 2,2h18c1.105,0 2,-0.895 2,-2v-18c0,-1.105 -0.895,-2 -2,-2zM10.954,22h-2.95v-9.492h2.95zM9.449,11.151c-0.951,0 -1.72,-0.771 -1.72,-1.72c0,-0.949 0.77,-1.719 1.72,-1.719c0.948,0 1.719,0.771 1.719,1.719c0,0.949 -0.771,1.72 -1.719,1.72zM22.004,22h-2.948v-4.616c0,-1.101 -0.02,-2.517 -1.533,-2.517c-1.535,0 -1.771,1.199 -1.771,2.437v4.696h-2.948v-9.492h2.83v1.297h0.04c0.394,-0.746 1.356,-1.533 2.791,-1.533c2.987,0 3.539,1.966 3.539,4.522z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="text-center">
+        <h1
+          class="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl"
+        >
+          The open standard for simple, structured logistics data
+        </h1>
+        <p class="mt-8 text-lg font-medium text-pretty sm:text-xl/8 opacity-50">
+          Carqo is an open-source data standard for logistics that brings
+          transparency and simplicity to the global transport ecosystem. The
+          standard provides a uniform and accessible structure for shipments and
+          all involved parties, enabling organizations to exchange information
+          consistently and collaborate far more efficiently.
+        </p>
+      </div>
     </div>
-    <footer>
-      <img src="/assets/logo.svg" alt="Carqo" width="24" height="24" /><span
-        >The open standard for logistics data.</span
-      >
-    </footer>
   </body>
 </html>
