@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://carqo.org/schemas/actor.schema.json",
+  "title": "Actor",
+  "type": "object",
+  "required": ["role"],
+  "properties": {
+    "directoryId": {
+      "type": "string",
+      "description": "Reference ID of the actor from the Carqo directory"
+    },
+    "relation": {
+      "$ref": "relation.schema.json",
+      "description": "Detailed relation object for the actor"
+    },
+    "role": {
+      "type": "array",
+      "enum": ["PRINCIPAL", "SENDER", "RECEIVER", "CARRIER"],
+      "description": "Roles of this actor",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    }
+  },
+  "oneOf": [{ "required": ["directoryId"] }, { "required": ["relation"] }],
+  "additionalProperties": true
+}

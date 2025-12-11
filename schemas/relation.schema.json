@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://carqo.org/schemas/relation.schema.json",
+  "title": "Relation",
+  "type": "object",
+  "required": ["name", "vat"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Human-readable name of this relation."
+    },
+    "vat": {
+      "type": "string",
+      "description": "VAT identification number of this relation."
+    },
+    "address": {
+      "$ref": "address.schema.json",
+      "description": "Optional detailed address for this relation."
+    }
+  },
+  "additionalProperties": true
+}
