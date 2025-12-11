@@ -1,0 +1,18 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 130" width="129" height="129">
+	<defs>
+		<linearGradient id="g1" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-128.549,69.607,0,76.096,129.274)">
+			<stop offset="0" stop-color="#0026ff"/>
+			<stop offset="1" stop-color="#08b9ff"/>
+		</linearGradient>
+		<linearGradient id="g2" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(36.919,-36.919,62.499,62.499,24.531,84.544)">
+			<stop offset="0" stop-color="#0026ff"/>
+			<stop offset="1" stop-color="#08b9ff"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: url(#g1) } 
+		.s1 { fill: url(#g2) } 
+	</style>
+	<path fill-rule="evenodd" class="s0" d="m65.9 0.9l44.3 25.6c0.5 0.3 0.7 0.7 0.7 1.2v87.2c0 0.6-0.3 1-0.8 1.3l-22.3 12.9c-0.7 0.4-1.5 0.2-1.9-0.5-0.1-0.2-0.2-0.5-0.2-0.7v-86.4l-43.7-25.2c-0.7-0.4-0.9-1.2-0.5-1.9 0.1-0.2 0.3-0.4 0.5-0.5l22.4-12.9c0.5-0.3 1-0.3 1.5-0.1z"/>
+	<path fill-rule="evenodd" class="s1" d="m64.3 105.6l-44.2-25.5c-0.5-0.3-0.7-0.8-0.7-1.3v-51.1c0-0.8 0.6-1.4 1.4-1.4 0.3 0 0.5 0.1 0.7 0.2l44.3 25.6c0.5 0.3 0.7 0.7 0.7 1.2v51.1c0 0.8-0.6 1.4-1.4 1.4-0.3 0-0.5 0-0.8-0.2z"/>
+</svg>
