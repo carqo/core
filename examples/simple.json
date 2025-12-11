@@ -42,5 +42,22 @@
         ]
       }
     }
+  ],
+  "actors": [
+    {
+      "id": "ACTOR-001",
+      "roles": ["PRINCIPAL", "SENDER"],
+      "directoryId": "org:carqo:1234567890"
+    },
+    {
+      "id": "ACTOR-002",
+      "roles": ["RECEIVER"],
+      "directoryId": "org:carqo:2468101214"
+    },
+    {
+      "id": "ACTOR-003",
+      "roles": ["CARRIER"],
+      "directoryId": "org:carqo:0987654321"
+    }
   ]
 }

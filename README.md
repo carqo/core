@@ -1,4 +1,5 @@
-![banner](/assets/banner.png)
+![banner](/assets/banner.jpg)
+
 # The open standard for simple, structured logistics data
 
 Carqo is an open-source logistics data standard that brings clarity and simplicity to the global transport ecosystem. It defines a unified structure for shipments, parties, planning, and reporting, allowing carriers, shippers, platforms, and software vendors to speak the same language.
@@ -11,6 +12,31 @@ classDiagram
 class Message {
     <<schema>>
     Shipment[] shipments <<required>>
+    Actor[] actors <<required>>
+}
+
+class Actor {
+    <<schema>>
+    string id <<required>>
+    Role[] roles <<required>>
+    oneOf:
+    + string directoryId
+    + Relation relation
+}
+
+class Role {
+    <<enumeration>>
+    PRINCIPAL
+    SENDER
+    RECEIVER
+    CARRIER
+}
+
+class Relation {
+    <<schema>>
+    string name <<required>>
+    string vat <<required>>
+    Address address
 }
 
 class Shipment {
@@ -44,13 +70,13 @@ class Weight {
 class Event {
     <<schema>>
     int sequence <<required>>
-    EventType type <<required>>
+    Type type <<required>>
     Position position <<required>>
     Moment moment <<required>>
     string[] items <<required>>
 }
 
-class EventType {
+class Type {
     <<enumeration>>
     LOAD
     UNLOAD
@@ -80,14 +106,18 @@ class Moment {
     string end
 }
 
+Message "1" --> "*" Actor : contains
+Actor "1" --> "*" Role : uses
+Actor "0..1" ..> Relation : optional
+Relation "0..1" ..> Address : optional
 Message "1" --> "*" Shipment : contains
 Shipment "1" --> "*" Event : contains
 Shipment "1" --> Cargo : contains
 Cargo "1" --> "*" Item : contains
 Item --> Weight : contains
-Event --> EventType : uses
+Event --> Type : uses
 Event --> Position : contains
-Position "0..1" --> Address : optional
+Position "0..1" ..> Address : optional
 Event --> Moment : contains
 Event ..> Item : "references ids"
 ```
@@ -140,6 +170,23 @@ As simple as possible:
           }
         ]
       }
+    }
+  ],
+  "actors": [
+    {
+      "id": "ACTOR-001",
+      "roles": ["PRINCIPAL", "SENDER"],
+      "directoryId": "org:carqo:1234567890"
+    },
+    {
+      "id": "ACTOR-002",
+      "roles": ["RECEIVER"],
+      "directoryId": "org:carqo:2468101214"
+    },
+    {
+      "id": "ACTOR-003",
+      "roles": ["CARRIER"],
+      "directoryId": "org:carqo:0987654321"
     }
   ]
 }

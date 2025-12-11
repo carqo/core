@@ -95,5 +95,35 @@
         }
       }
     }
+  ],
+  "actors": [
+    {
+      "id": "ACTOR-001",
+      "roles": ["PRINCIPAL", "SENDER"],
+      "directoryId": "org:carqo:1234567890",
+      "attributes": {
+        "contactPerson": "Jan de Vries",
+        "phone": "+31 6 12345678"
+      }
+    },
+    {
+      "id": "ACTOR-002",
+      "roles": ["RECEIVER"],
+      "directoryId": "org:carqo:2468101214"
+    },
+    {
+      "id": "ACTOR-003",
+      "roles": ["CARRIER"],
+      "relation": {
+        "name": "Fast Logistics B.V.",
+        "vat": "NL123456789B01",
+        "address": {
+          "addressLine1": "Transportweg 10",
+          "postalCode": "1014 AB",
+          "city": "Amsterdam",
+          "country": "NL"
+        }
+      }
+    }
   ]
 }
