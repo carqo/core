@@ -11,8 +11,11 @@ classDiagram
 
 class Message {
     <<schema>>
+    string: id <<required>>
     Shipment[] shipments <<required>>
     Actor[] actors <<required>>
+    string createdAt <<required>>
+    string updatedAt <<required>>
 }
 
 class Actor {
@@ -128,6 +131,7 @@ As simple as possible:
 
 ```json
 {
+  "id": "467491f1-d1b1-4fe8-b9d4-cda8623c8403",
   "shipments": [
     {
       "reference": "SHIPMENT-001",
@@ -188,6 +192,8 @@ As simple as possible:
       "roles": ["CARRIER"],
       "directoryId": "org:carqo:0987654321"
     }
-  ]
+  ],
+  "createdAt": "2026-05-28T07:00:00Z",
+  "updatedAt": "2026-05-28T17:00:00Z"
 }
 ```
