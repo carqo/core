@@ -10,6 +10,12 @@ This object provides a minimal yet complete representation of a shipment by addr
 
 ```json
 {
+  "who": {
+    "principal": "9a0b0e29-efe3-4e40-99a7-ecb67d54bd82",
+    "sender": "02dbb694-5d37-4093-b669-e6f20b91a2d8",
+    "receiver": "a8150f3b-9c98-4ce2-a34b-aa35a589cead",
+    "carrier": "214834ac-6099-4a0f-8b66-c403231efde4"
+  },
   "what": {
     "amount": 33,
     "unit": "PALLET"
