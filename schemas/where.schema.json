@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://carqo.org/schemas/where.schema.json",
+  "title": "Where",
+  "type": "object",
+  "required": ["load", "unload"],
+  "properties": {
+    "load": {
+      "$ref": "position.schema.json",
+      "description": "The geographic location where the shipment is scheduled to be picked up or loaded. Includes latitude, longitude, and optionally a human-readable label for operational reference."
+    },
+    "unload": {
+      "$ref": "position.schema.json",
+      "description": "The geographic location where the shipment is scheduled to be delivered or unloaded. Includes latitude, longitude, and optionally a human-readable label for operational reference."
+    }
+  },
+  "additionalProperties": true
+}

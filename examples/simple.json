@@ -1,66 +1,32 @@
 {
-  "id": "467491f1-d1b1-4fe8-b9d4-cda8623c8403",
-  "shipments": [
-    {
-      "reference": "SHIPMENT-001",
-      "events": [
-        {
-          "sequence": 1,
-          "type": "LOAD",
-          "position": {
-            "latitude": 52.400334,
-            "longitude": 6.61591
-          },
-          "moment": {
-            "start": "2026-05-28T07:00:00Z"
-          },
-          "items": ["ITEM-001"]
-        },
-        {
-          "sequence": 2,
-          "type": "UNLOAD",
-          "position": {
-            "latitude": 51.893867,
-            "longitude": 4.520616
-          },
-          "moment": {
-            "start": "2026-05-28T17:00:00Z"
-          },
-          "items": ["ITEM-001"]
-        }
-      ],
-      "cargo": {
-        "items": [
-          {
-            "id": "ITEM-001",
-            "amount": 5,
-            "unit": "BOX",
-            "weight": {
-              "value": 250,
-              "unit": "KG"
-            }
-          }
-        ]
-      }
-    }
-  ],
-  "actors": [
-    {
-      "id": "ACTOR-001",
-      "roles": ["PRINCIPAL", "SENDER"],
-      "directoryId": "org:carqo:1234567890"
+  "who": {
+    "principal": "9a0b0e29-efe3-4e40-99a7-ecb67d54bd82",
+    "sender": "02dbb694-5d37-4093-b669-e6f20b91a2d8",
+    "receiver": "a8150f3b-9c98-4ce2-a34b-aa35a589cead",
+    "carrier": "214834ac-6099-4a0f-8b66-c403231efde4"
+  },
+  "what": {
+    "amount": 33,
+    "unit": "PALLET"
+  },
+  "where": {
+    "load": {
+      "latitude": 52.400334,
+      "longitude": 6.61591
     },
-    {
-      "id": "ACTOR-002",
-      "roles": ["RECEIVER"],
-      "directoryId": "org:carqo:2468101214"
-    },
-    {
-      "id": "ACTOR-003",
-      "roles": ["CARRIER"],
-      "directoryId": "org:carqo:0987654321"
+    "unload": {
+      "latitude": 51.893867,
+      "longitude": 4.520616
     }
-  ],
-  "createdAt": "2026-05-28T07:00:00Z",
-  "updatedAt": "2026-05-28T17:00:00Z"
+  },
+  "when": {
+    "load": {
+      "start": "2026-05-28T08:00:00Z",
+      "stop": "2026-05-28T09:00:00Z"
+    },
+    "unload": {
+      "start": "2026-05-28T16:00:00Z",
+      "stop": "2026-05-28T17:00:00Z"
+    }
+  }
 }

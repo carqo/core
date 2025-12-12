@@ -3,23 +3,23 @@
   "$id": "https://carqo.org/schemas/shipment.schema.json",
   "title": "Shipment",
   "type": "object",
-  "required": ["reference", "events", "cargo"],
+  "required": ["who", "what", "where", "when"],
   "properties": {
-    "reference": {
-      "type": "string",
-      "description": "Unique reference identifier for this shipment."
+    "wwho": {
+      "$ref": "who.schema.json",
+      "description": "Identifies the parties involved in the shipment, including the principal, sender, receiver and carrier. Provides essential contact and identification information for operational coordination."
     },
-    "events": {
-      "type": "array",
-      "description": "A list of events for this shipment.",
-      "items": {
-        "$ref": "event.schema.json"
-      },
-      "minItems": 1
+    "what": {
+      "$ref": "what.schema.json",
+      "description": "Describes the physical characteristics of the shipment, including quantity and unit of the goods being transported. Provides the minimal data required to identify what is being moved and allows interoperability between transport, warehouse, and planning systems."
     },
-    "cargo": {
-      "$ref": "cargo.schema.json",
-      "description": "The cargo for this shipment."
+    "where": {
+      "$ref": "where.schema.json",
+      "description": "Specifies the geographic locations for loading and unloading the shipment, using coordinates. Essential for routing, dispatching, and operational planning."
+    },
+    "when": {
+      "$ref": "when.schema.json",
+      "description": "Defines the planned time windows for loading and unloading the shipment, using start and end times. Provides operational scheduling information for carriers, warehouses, and downstream systems."
     }
   },
   "additionalProperties": true

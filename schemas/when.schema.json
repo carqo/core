@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://carqo.org/schemas/when.schema.json",
+  "title": "When",
+  "type": "object",
+  "required": ["load", "unload"],
+  "properties": {
+    "load": {
+      "$ref": "timeslot.schema.json",
+      "description": "The time window during which loading of the shipment is planned to begin and finish. Includes earliest and latest allowed start times."
+    },
+    "unload": {
+      "$ref": "timeslot.schema.json",
+      "description": "The time window during which unloading of the shipment is planned to begin and finish. Includes earliest and latest allowed end times."
+    }
+  },
+  "additionalProperties": true
+}
