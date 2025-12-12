@@ -5,7 +5,7 @@
   "type": "object",
   "required": ["who", "what", "where", "when"],
   "properties": {
-    "wwho": {
+    "who": {
       "$ref": "who.schema.json",
       "description": "Identifies the parties involved in the shipment, including the principal, sender, receiver and carrier. Provides essential contact and identification information for operational coordination."
     },

@@ -33,11 +33,11 @@ This object provides a minimal yet complete representation of a shipment by addr
   "when": {
     "load": {
       "start": "2026-05-28T08:00:00Z",
-      "stop": "2026-05-28T09:00:00Z"
+      "end": "2026-05-28T09:00:00Z"
     },
     "unload": {
       "start": "2026-05-28T16:00:00Z",
-      "stop": "2026-05-28T17:00:00Z"
+      "end": "2026-05-28T17:00:00Z"
     }
   }
 }
