@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://carqo.org/schemas/what.schema.json",
+  "title": "What",
+  "type": "object",
+  "required": ["amount", "unit"],
+  "properties": {
+    "amount": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "The quantity of the shipment item. Must be a whole number greater than or equal to 1. Represents the number of units to be transported, such as pallets, boxes, or containers."
+    },
+    "unit": {
+      "type": "string",
+      "pattern": "^[A-Z]+$",
+      "description": "The unit of measurement for the shipment item, expressed in uppercase letters (e.g., PALLET, BOX, KG). Should follow standardized codes where possible to ensure interoperability between systems."
+    }
+  },
+  "additionalProperties": true
+}

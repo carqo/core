@@ -7,25 +7,17 @@
   "properties": {
     "latitude": {
       "type": "number",
-      "description": "Latitude in decimal degrees.",
+      "description": "The north-south geographic coordinate in decimal degrees (WGS-84). Required for mapping and navigation. Range: -90 to 90.",
       "minimum": -90,
       "maximum": 90,
       "multipleOf": 0.000001
     },
     "longitude": {
       "type": "number",
-      "description": "Longitude in decimal degrees.",
+      "description": "The east-west geographic coordinate in decimal degrees (WGS-84). Required for mapping and navigation. Range: -180 to 180.",
       "minimum": -180,
       "maximum": 180,
       "multipleOf": 0.000001
-    },
-    "name": {
-      "type": "string",
-      "description": "Optional human-readable name for this position."
-    },
-    "address": {
-      "$ref": "address.schema.json",
-      "description": "Optional detailed address for this position."
     }
   },
   "additionalProperties": true

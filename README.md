@@ -1,199 +1,100 @@
 ![banner](/assets/banner.jpg)
 
-# The open standard for simple, structured logistics data
+# The open standard of simple logistics data
 
-Carqo is an open-source data standard for logistics that brings transparency and simplicity to the global transport ecosystem. The standard provides a uniform and accessible structure for shipments and all involved parties, enabling organizations to exchange information consistently and collaborate far more efficiently.
+Carqo is an open-source standard that makes logistics data simple. By focusing only on the essential questions of who is involved, what is shipped, where it is loaded and unloaded, and when, it removes unnecessary complexity and allows organizations to exchange information clearly, consistently, and efficiently.
 
-## Model
+## As simple as possible
+
+This object provides a minimal yet complete representation of a shipment by addressing the four key questions: **who** is involved, **what** is being shipped, **where** it is loaded and unloaded, and **when** the operations are scheduled.
+
+```json
+{
+  "what": {
+    "amount": 33,
+    "unit": "PALLET"
+  },
+  "where": {
+    "load": {
+      "latitude": 52.400334,
+      "longitude": 6.61591
+    },
+    "unload": {
+      "latitude": 51.893867,
+      "longitude": 4.520616
+    }
+  },
+  "when": {
+    "load": {
+      "start": "2026-05-28T08:00:00Z",
+      "stop": "2026-05-28T09:00:00Z"
+    },
+    "unload": {
+      "start": "2026-05-28T16:00:00Z",
+      "stop": "2026-05-28T17:00:00Z"
+    }
+  }
+}
+```
+
+## Structure
+
+This class diagram represents the fundamental structure of Carqo shipments, highlighting the four key questions: **who**, **what**, **where** and **when**, keeping logistics data simple and clear.
 
 ```mermaid
 classDiagram
 
-class Message {
-    <<schema>>
-    string: id <<required>>
-    Shipment[] shipments <<required>>
-    Actor[] actors <<required>>
-    string createdAt <<required>>
-    string updatedAt <<required>>
-}
-
-class Actor {
-    <<schema>>
-    string id <<required>>
-    Role[] roles <<required>>
-    oneOf:
-    + string directoryId
-    + Relation relation
-}
-
-class Role {
-    <<enumeration>>
-    PRINCIPAL
-    SENDER
-    RECEIVER
-    CARRIER
-}
-
-class Relation {
-    <<schema>>
-    string name <<required>>
-    string vat <<required>>
-    Address address
-}
-
 class Shipment {
     <<schema>>
-    string reference <<required>>
-    Event[] events <<required>>
-    Cargo cargo <<required>>
+    Who: who <<required>>
+    What: what <<required>>
+    Where: where <<required>>
+    When: when <<required>>
 }
 
-class Cargo {
+class Who {
     <<schema>>
-    Item[] items <<required>>
-    string description
+    string principal <<required>>
+    string sender <<required>>
+    string receiver <<required>>
+    string carrier <<required>>
 }
 
-class Item {
+class What {
     <<schema>>
-    string id <<required>>
     int amount <<required>>
     string unit <<required>>
-    Weight weight <<required>>
-    string description
 }
 
-class Weight {
+class Where {
     <<schema>>
-    int value <<required>>
-    string unit <<required>>
-}
-
-class Event {
-    <<schema>>
-    int sequence <<required>>
-    Type type <<required>>
-    Position position <<required>>
-    Moment moment <<required>>
-    string[] items <<required>>
-}
-
-class Type {
-    <<enumeration>>
-    LOAD
-    UNLOAD
-    STOP
+    Position: load <<required>>
+    Position: unload <<required>>
 }
 
 class Position {
     <<schema>>
     number latitude <<required>>
     number longitude <<required>>
-    string name
-    Address address
 }
 
-class Address {
+class When {
     <<schema>>
-    string addressLine1 <<required>>
-    string zip <<required>>
-    string city <<required>>
-    string state
-    string country <<required>>
+    Timeslot: load <<required>>
+    Timeslot: unload <<required>>
 }
 
-class Moment {
+class Timeslot {
     <<schema>>
     string start <<required>>
-    string end
+    string stop <<required>>
 }
 
-Message "1" --> "*" Actor : contains
-Actor "1" --> "*" Role : uses
-Actor "0..1" ..> Relation : optional
-Relation "0..1" ..> Address : optional
-Message "1" --> "*" Shipment : contains
-Shipment "1" --> "*" Event : contains
-Shipment "1" --> Cargo : contains
-Cargo "1" --> "*" Item : contains
-Item --> Weight : contains
-Event --> Type : uses
-Event --> Position : contains
-Position "0..1" ..> Address : optional
-Event --> Moment : contains
-Event ..> Item : "references ids"
-```
+Shipment -->  Who: contains
+Shipment -->  What: contains
+Shipment -->  Where: contains
+Shipment -->  When: contains
 
-## Example
-
-As simple as possible:
-
-```json
-{
-  "id": "467491f1-d1b1-4fe8-b9d4-cda8623c8403",
-  "shipments": [
-    {
-      "reference": "SHIPMENT-001",
-      "events": [
-        {
-          "sequence": 1,
-          "type": "LOAD",
-          "position": {
-            "latitude": 52.400334,
-            "longitude": 6.61591
-          },
-          "moment": {
-            "start": "2026-05-28T07:00:00Z"
-          },
-          "items": ["ITEM-001"]
-        },
-        {
-          "sequence": 2,
-          "type": "UNLOAD",
-          "position": {
-            "latitude": 51.893867,
-            "longitude": 4.520616
-          },
-          "moment": {
-            "start": "2026-05-28T17:00:00Z"
-          },
-          "items": ["ITEM-001"]
-        }
-      ],
-      "cargo": {
-        "items": [
-          {
-            "id": "ITEM-001",
-            "amount": 5,
-            "unit": "BOX",
-            "weight": {
-              "value": 250,
-              "unit": "KG"
-            }
-          }
-        ]
-      }
-    }
-  ],
-  "actors": [
-    {
-      "id": "ACTOR-001",
-      "roles": ["PRINCIPAL", "SENDER"],
-      "directoryId": "org:carqo:1234567890"
-    },
-    {
-      "id": "ACTOR-002",
-      "roles": ["RECEIVER"],
-      "directoryId": "org:carqo:2468101214"
-    },
-    {
-      "id": "ACTOR-003",
-      "roles": ["CARRIER"],
-      "directoryId": "org:carqo:0987654321"
-    }
-  ],
-  "createdAt": "2026-05-28T07:00:00Z",
-  "updatedAt": "2026-05-28T17:00:00Z"
-}
+Where --> Position: contains
+When --> Timeslot: contains
 ```

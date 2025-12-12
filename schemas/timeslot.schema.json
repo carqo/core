@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://carqo.org/schemas/timeslot.schema.json",
+  "title": "Timeslot",
+  "type": "object",
+  "required": ["start", "end"],
+  "properties": {
+    "start": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The earliest planned moment at which an activity may begin. Expressed as an ISO-8601 UTC datetime. Used for planning, appointment windows, and operational availability."
+    },
+    "end": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The latest planned moment at which an activity should be completed or must start by, depending on the operational context. Expressed as an ISO-8601 UTC datetime."
+    }
+  },
+  "additionalProperties": true
+}

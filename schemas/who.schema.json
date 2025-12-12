@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://carqo.org/schemas/who.schema.json",
+  "title": "Who",
+  "type": "object",
+  "required": ["principal", "sender", "receiver", "carrier"],
+  "properties": {
+    "principal": {
+      "type": "string",
+      "description": "The main party responsible for the shipment, typically the owner of the goods being transported."
+    },
+    "sender": {
+      "type": "string",
+      "description": "The party that is sending or dispatching the shipment."
+    },
+    "receiver": {
+      "type": "string",
+      "description": "The party that is intended to receive or take delivery of the shipment."
+    },
+    "carrier": {
+      "type": "string",
+      "description": "The party responsible for transporting the shipment from sender to receiver."
+    }
+  },
+  "additionalProperties": true
+}
